@@ -1,0 +1,132 @@
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; /* Reset font-weight */
+  line-height: 1.2; /* Adjust line-height for better spacing */
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Forms */
+input,
+textarea,
+select,
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Block elements */
+p {
+  margin: 0;
+}
+
+nav {
+  display: block;
+}
+
+/* Miscellaneous */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: none;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+code,
+pre {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Ensure all elements are responsive */
+@media (max-width: 600px) {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  background-color: black;
+}
+
+:root {
+    --color-1: #0B0C10; 
+    --color-2: #1F2833; 
+    --color-3: #C5C6C7; 
+    --color-4: #66FCF1; 
+    --color-5: #45A29E; 
+  }
+
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--color-4);
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--color-5);
+  }
+
+  p {
+    font-size: 20px;
+    color: var(--color-3);
+  }

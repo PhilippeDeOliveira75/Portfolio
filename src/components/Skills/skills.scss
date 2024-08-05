@@ -1,0 +1,15 @@
+.skillsContainer {
+    margin-bottom: 40px;
+
+    .w-logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        img {
+            width: 100px;
+            height: 100px;
+        };
+    }
+}
