@@ -1,7 +1,7 @@
 
 import './home.scss';
 
-import { Intro, AboutMe, Skills, Projects } from '@components/import';
+import { Intro, AboutMe, Skills, Projects, Contact } from '@components/import';
 
 
 function Home() {
@@ -15,9 +15,10 @@ function Home() {
             <AboutMe />
             <Skills />
             <Projects />
+            <Contact />
 
         </div>
     );
 }
 
-export default Home;
+export default Home

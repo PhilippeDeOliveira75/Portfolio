@@ -5,7 +5,7 @@ import { PiGearSixThin } from "react-icons/pi";
 function AboutMe () {
 
     return (
-        <div className="aboutMeContainer">
+        <div className="aboutMeContainer" id='about-me'>
             <div className="aboutMeTilteAndCitation">
                 <h2 className="aboutMeTitle">ABOUT ME</h2>
                 <p className='aboutMeCitation'>Bringing your vision to life with
