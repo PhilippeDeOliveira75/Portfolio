@@ -1,3 +1,4 @@
+import React from 'react';
 import './header.scss';
 import { RiHome5Line } from "react-icons/ri";
 import { PiSmileyWink } from "react-icons/pi";
@@ -5,18 +6,26 @@ import { GrProjects } from "react-icons/gr";
 import { GrContact } from "react-icons/gr";
 import { LiaStar } from "react-icons/lia";
 
-import { useState } from 'react';
+function Header({ activeIndex, setActiveIndex }) {
 
-function Header() {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  // Fonction pour diviser le texte en lettres avec des espaces insécables
   const splitText = (text) => {
     return text.split('').map((letter, index) => (
       <span key={index} style={{ '--index': index }}>
         {letter === ' ' ? '\u00A0' : letter}
       </span>
     ));
+  };
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+    
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
+    const sectionId = sectionIds[index];
+
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -31,7 +40,7 @@ function Header() {
             <li 
               key={item}
               className={`list ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => handleClick(index)}
             >
               <div className='iconContainer'>
                 {index === 0 && <RiHome5Line className='icon' size={24} />}

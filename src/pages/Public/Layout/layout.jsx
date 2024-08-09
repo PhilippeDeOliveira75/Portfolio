@@ -1,27 +1,53 @@
 import './layout.scss'
 import { Outlet } from 'react-router'
 import { Header, Footer } from '@components/import.js'
+import React, { useState, useEffect } from 'react';
 
 
-function PublicLayout  ()  {
+function PublicLayout() {
+    
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    return (
+  useEffect(() => {
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
 
-        <div className='layout'>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = sectionIds.indexOf(entry.target.id);
+          if (index !== -1) {
+            setActiveIndex(index);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
 
-            <Header />
+    sectionIds.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
 
-            <div className='mainContainer'>
-                <Outlet />
-                <Footer />
-            </div>
+    return () => {
+      sectionIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
-
-
-        </div>
-
-    )
-
+  return (
+    <div className='layout'>
+      <Header activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+      <div className='mainContainer'>
+        <Outlet />
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
-export default PublicLayout
+export default PublicLayout;

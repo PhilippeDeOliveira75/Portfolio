@@ -1,1 +1,1 @@
-export { default as MovieCaller } from '@services/movieCaller.jsx'
+export { default as ValidationForm } from './validationForm';
