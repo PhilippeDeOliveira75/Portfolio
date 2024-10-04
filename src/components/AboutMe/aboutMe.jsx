@@ -1,38 +1,50 @@
 import './aboutMe.scss';
-import { PiPathBold } from "react-icons/pi";
-import { PiGearSixThin } from "react-icons/pi";
+
+import { useTranslation } from "react-i18next"
+
+import { PiPathBold } from "react-icons/pi"
+import { PiGearSixThin } from "react-icons/pi"
+
 
 function AboutMe () {
 
+    const { t } = useTranslation("translation")
+
     return (
+
         <div className="aboutMeContainer" id='about-me'>
+
             <div className="aboutMeTilteAndCitation">
-                <h2 className="aboutMeTitle">ABOUT ME</h2>
-                <p className='aboutMeCitation'>Bringing your vision to life with
-                precision and passion</p>
+                <h2 className="aboutMeTitle">{t('aboutme.title')}</h2> 
+                <p className='aboutMeCitation'>{t('aboutme.text')}</p>
             </div>
 
             <div className="w-aboutMeContent">
+
                 <div className="w-aboutMeIconAndText">
                     <div className="w-aboutMeIcon">
                         <PiPathBold className='aboutMeIcon'/>
                         <div className="colorCircle"></div>
                     </div>
-                    <h3>My Ambition</h3>
-                    <p className="aboutMeContentText">I am a front-end developer. I have a passion for web development. I am a fast learner and always eager to learn new technologies. I thrive in collaborative environments and am eager to find new opportunities to grow my skills on exciting projects.</p>
+                    <h3>{t('aboutme.h3first')}</h3> 
+                    <p className="aboutMeContentText">{t('aboutme.text2')}</p>
                 </div>
+
                 <div className="w-aboutMeIconAndText">
                     <div className="w-aboutMeIcon">
                         <PiGearSixThin className='aboutMeIcon strokePlus'/>
                         <div className="colorCircle"></div>
                     </div>
-                    <h3>My Approach</h3>
-                    <p className="aboutMeContentText">I use a user-centered approach to create intuitive and responsive web applications, focusing on user experience and modern technologies. Collaboration and continuous improvement drive my process to ensure each project meets high standards.</p>
+                    <h3>{t('aboutme.h3second')}</h3>
+                    <p className="aboutMeContentText">{t('aboutme.text3')}</p>
                 </div>
+
             </div>
+
         </div>
-    );
+
+    )
+
 }
 
 export default AboutMe
-                

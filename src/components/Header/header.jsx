@@ -1,13 +1,17 @@
-import React from 'react';
-import './header.scss';
-import { RiHome5Line } from "react-icons/ri";
-import { PiSmileyWink } from "react-icons/pi";
-import { GrProjects } from "react-icons/gr";
-import { GrContact } from "react-icons/gr";
-import { LiaStar } from "react-icons/lia";
+import './header.scss'
+
+import { useTranslation } from 'react-i18next'
+
+import { RiHome5Line } from "react-icons/ri"
+import { PiSmileyWink } from "react-icons/pi"
+import { GrProjects } from "react-icons/gr"
+import { GrContact } from "react-icons/gr"
+import { LiaStar } from "react-icons/lia"
 
 function Header({ activeIndex, setActiveIndex }) {
 
+  const { t } = useTranslation("translation")
+  
   const splitText = (text) => {
     return text.split('').map((letter, index) => (
       <span key={index} style={{ '--index': index }}>
@@ -19,24 +23,27 @@ function Header({ activeIndex, setActiveIndex }) {
   const handleClick = (index) => {
     setActiveIndex(index);
     
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
-    const sectionId = sectionIds[index];
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact']
+    const sectionId = sectionIds[index]
 
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   return (
+
     <header className='headerContainer'>
+      
       <div className='w-title'>
         <h1 className='title'>NeOz</h1>
       </div>
 
       <nav className='navContainer'>
+
         <ul className='w-list'>
-          {['HOME', 'ABOUT ME', 'SKILLS', 'PROJECTS', 'CONTACT'].map((item, index) => (
+          {[t('NavBar.home'), t('NavBar.aboutme'), t('NavBar.skills'), t('NavBar.projects'), t('NavBar.contact')].map((item, index) => (
             <li 
               key={item}
               className={`list ${activeIndex === index ? 'active' : ''}`}
@@ -57,9 +64,13 @@ function Header({ activeIndex, setActiveIndex }) {
             </li>
           ))}
         </ul>
+
       </nav>
+
     </header>
-  );
+
+  )
+
 }
 
-export default Header;
+export default Header

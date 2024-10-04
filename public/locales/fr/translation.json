@@ -1,0 +1,52 @@
+{
+  "NavBar": {
+    "home": "ACCUEIL",
+    "aboutme": "À PROPOS",
+    "skills": "COMPÉTENCES",
+    "projects": "PROJETS",
+    "contact": "CONTACT"
+    },
+        
+    "home": {
+      "title": "JE SUIS NEOZ !",
+      "intro": "Je suis un designer UI/UX passionné avec pour mission de créer des expériences numériques agréables et intuitives. Avec une solide base en principes de design et un sens aigu du détail, je me spécialise dans la traduction d'idées complexes en interfaces conviviales qui captivent et engagent",
+      "button": "Télécharger CV"
+    },
+
+    "aboutme": {
+      "title": "À PROPOS DE MOI",
+      "text": "Donner vie à votre vision avec précision et passion.",
+      "h3first": "Mon Ambition",
+      "text2":"Je suis un développeur front-end passionné par le développement web. J'apprends rapidement et suis toujours enthousiaste à l'idée de découvrir de nouvelles technologies. Je m'épanouis dans des environnements collaboratifs et suis impatient de trouver de nouvelles opportunités pour développer mes compétences sur des projets stimulants.",
+      "h3second": "Mon Approche",
+      "text3": "J'adopte une approche centrée sur l'utilisateur pour créer des applications web intuitives et réactives, en mettant l'accent sur l'expérience utilisateur et les technologies modernes. La collaboration et l'amélioration continue sont au cœur de mon processus afin de garantir que chaque projet respecte des standards élevés."
+    },
+
+    "skills": {
+      "title": "COMPÉTENCES"
+    },
+
+    "projects": {
+      "title": "PROJETS",
+      "text1": "Projet 1",
+      "text2": "Projet 2",
+      "text3": "Projet 3",
+      "text4": "Projet 4"
+    },
+
+    "contact": {
+      "title": "CONTACTEZ-MOI",
+      "form": {
+          "name": "Nom",
+          "subject": "Sujet",
+          "email": "Email",
+          "message": "Message",
+          "button": "Envoyez"
+      }
+    },
+
+    "footer": {
+      "text": "© 2024 Tous droits réservés. Conçu et développé par Neoz."
+    }
+
+}

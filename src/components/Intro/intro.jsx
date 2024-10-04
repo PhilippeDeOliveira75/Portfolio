@@ -1,8 +1,12 @@
 import './intro.scss'
-import React, { useEffect, useState } from 'react'
-import { MatrixCat, Oblique } from '@assets/import'
+import { useEffect, useState } from 'react'
+import { useTranslation } from "react-i18next"
+import { LanguageSelector } from '@services/import'
+import { MatrixCat, RainCode } from '@assets/import'
 
 function Intro() {
+
+    const { t } = useTranslation("translation")
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
     const titles = ["WEB DEVELOPER", "UX DESIGNER", "SEO CONSULTANT", "HERO"]
     const totalTitles = titles.length
@@ -19,7 +23,7 @@ function Intro() {
         <div className='w-introAndPortrait'>
             <div className='w-intro'>
                 <div className='intro'>
-                    <h1 className='title'>HI, I'M NEOZ !</h1>
+                    <h1 className='title'>{t('home.title')}</h1>
                     <div className='w-homeTitle'>
                         <span className='staticTitle'>SUPER</span>
                         <div className='animatedTitles' style={{ transform: `translateY(-${currentTitleIndex * 40}px)` }}>
@@ -29,17 +33,26 @@ function Intro() {
                         </div>
                     </div>
                     <p className='introText'>
-                        I'm a passionate UI/UX designer with a mission to create delightful and intuitive digital experiences.
-                        With a strong foundation in design principles and a keen eye for detail,
-                        I specialize in translating complex ideas into user-friendly interfaces that captivate and engage.
+                        {t('home.intro')}
                     </p>
                 </div>
                 <div className='w-buttonIntro'>
-                    <button className='buttonIntro'>Download CV</button>
+                    <button className='buttonIntro'>{t('home.button')}</button>
                 </div>
             </div>
             <div className='w-portrait'>
-                <img className='portrait' src={MatrixCat} alt='portrait' />
+                <div className='w-darkModeAndLanguage'>
+                    <button className='darkModeButton'>
+                        <span className='darkModeIcon'></span>
+                    </button>
+                    <LanguageSelector />
+                </div>
+                <div className="w-portraitAndVideo">
+                    <img className='portrait' src={MatrixCat} alt='portrait' />
+                    <video className='video' autoPlay playsInline muted loop preload="auto">
+                        <source src={RainCode} />
+                    </video>
+                </div>
             </div>
         </div>
     )

@@ -9,6 +9,7 @@ function PublicLayout() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+
     const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
 
     const observer = new IntersectionObserver((entries) => {
@@ -19,8 +20,8 @@ function PublicLayout() {
             setActiveIndex(index);
           }
         }
-      });
-    }, { threshold: 0.5 });
+      })
+    }, { threshold: 0.5 })
 
     sectionIds.forEach(id => {
       const element = document.getElementById(id);

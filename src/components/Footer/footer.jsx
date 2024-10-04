@@ -1,11 +1,17 @@
 import './footer.scss'
 
+import { useTranslation } from 'react-i18next'
+
 function Footer() {
+
+    const { t } = useTranslation('translation')
 
     return (
 
         <footer className="footer">
-            <p>© 2024 NeOz. All rights reserved.</p>
+
+            <p>{t('footer.text')}</p>
+
         </footer>
 
     )

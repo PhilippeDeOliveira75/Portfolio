@@ -1,6 +1,5 @@
 export { default as Header } from '@components/Header/header.jsx'
 export { default as Footer } from '@components/Footer/footer.jsx'
-export { default as RainCodeName } from '@components/RainCodeName/rainCodeName.jsx' 
 export { default as Intro } from '@components/Intro/intro.jsx'
 export { default as AboutMe } from '@components/AboutMe/aboutMe.jsx'
 export { default as Skills } from '@components/Skills/skills.jsx'

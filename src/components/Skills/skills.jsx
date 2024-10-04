@@ -1,11 +1,20 @@
 import './skills.scss';
-import { React, Vite, Github, Node, Docker, Redux, Sass } from '@assets/import';
 
-function Skills () {
+import { useTranslation } from "react-i18next"
+
+import { React, Vite, Github, Node, Docker, Redux, Sass } from '@assets/import'
+
+
+function Skills() {
+
+    const { t } = useTranslation("translation")
 
     return (
+
         <div className='skillsContainer'>
-            <h2>SKILLS</h2>
+
+            <h2>{t('skills.title')}</h2>
+
             <div className='w-logo'>
                 <img src={React} alt="react logo" />
                 <img src={Vite} alt="vite logo" />
@@ -15,9 +24,11 @@ function Skills () {
                 <img src={Redux} alt="redux logo" />
                 <img src={Sass} alt="sass logo" />
             </div>
+
         </div>
 
     )
+    
 }
 
 export default Skills

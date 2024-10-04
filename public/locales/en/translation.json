@@ -1,0 +1,51 @@
+{
+    "NavBar": {
+      "home": "HOME",
+      "aboutme": "ABOUT ME",
+      "skills": "SKILLS",
+      "projects": "PROJECTS",
+      "contact": "CONTACT"
+    },
+          
+    "home": {
+        "title": "HI, I'M NEOZ !",
+        "intro": "I'm a passionate UI/UX designer with a mission to create delightful and intuitive digital experiences. With a strong foundation in design principles and a keen eye for detail, I specialize in translating complex ideas into user-friendly interfaces that captivate and engage.",
+        "button": "Download CV"
+    },
+
+    "aboutme": {
+        "title": "ABOUT ME",
+        "text": "Bringing your vision to life with precision and passion.",
+        "h3first": "My Ambition",
+        "text2":"I am a front-end developer. I have a passion for web development. I am a fast learner and always eager to learn new technologies. I thrive in collaborative environments and am eager to find new opportunities to grow my skills on exciting projects.",
+        "h3second": "My Approach",
+        "text3": "I use a user-centered approach to create intuitive and responsive web applications, focusing on user experience and modern technologies. Collaboration and continuous improvement drive my process to ensure each project meets high standards."
+    },
+
+    "skills": {
+        "title": "SKILLS"
+    },
+
+    "projects": {
+        "title": "PROJECTS",
+        "text1": "Project 1",
+        "text2": "Project 2",
+        "text3": "Project 3",
+        "text4": "Project 4"
+    },
+
+    "contact": {
+        "title": "CONTACT ME",
+        "form": {
+            "name": "Name",
+            "subject": "Subject",
+            "email": "Email",
+            "message": "Message",
+            "button": "Send"
+        }
+    },
+
+    "footer": {
+        "text": "© 2024 All rights reserved. Designed & Built by Neoz"
+    }
+}
