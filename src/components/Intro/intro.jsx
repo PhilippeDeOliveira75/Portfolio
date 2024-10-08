@@ -1,23 +1,31 @@
-import './intro.scss'
-import { useEffect, useState } from 'react'
-import { useTranslation } from "react-i18next"
-import { LanguageSelector } from '@services/import'
-import { MatrixCat, RainCode } from '@assets/import'
+import './intro.scss';
+import { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from '@services/import';
+import { MatrixCat, RainCode } from '@assets/import';
 
 function Intro() {
-
-    const { t } = useTranslation("translation")
-    const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
-    const titles = ["WEB DEVELOPER", "UX DESIGNER", "SEO CONSULTANT", "HERO"]
-    const totalTitles = titles.length
+    const { t } = useTranslation("translation");
+    const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+    const [isDarkMode, setIsDarkMode] = useState(true)
+    const titles = ["WEB DEVELOPER", "UX DESIGNER", "SEO CONSULTANT", "HERO"];
+    const totalTitles = titles.length;
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % totalTitles)
-        }, 2000)
+            setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % totalTitles);
+        }, 2000);
 
-        return () => clearInterval(interval)
-    }, [totalTitles])
+        return () => clearInterval(interval);
+    }, [totalTitles]);
+
+    useEffect(() => {
+        document.body.className = isDarkMode ? 'dark' : 'light'; 
+    }, [isDarkMode]);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode((prev) => !prev);
+    };
 
     return (
         <div className='w-introAndPortrait'>
@@ -41,21 +49,29 @@ function Intro() {
                 </div>
             </div>
             <div className='w-portrait'>
-                <div className='w-darkModeAndLanguage'>
-                    <button className='darkModeButton'>
-                        <span className='darkModeIcon'></span>
-                    </button>
-                    <LanguageSelector />
-                </div>
+
+            <div className='w-darkModeAndLanguage'>
+    <button
+        className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
+        onClick={toggleDarkMode}
+    >
+        <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
+    </button>
+
+    <LanguageSelector />
+</div>
+
+
                 <div className="w-portraitAndVideo">
                     <img className='portrait' src={MatrixCat} alt='portrait' />
                     <video className='video' autoPlay playsInline muted loop preload="auto">
                         <source src={RainCode} />
                     </video>
                 </div>
+
             </div>
         </div>
-    )
+    );
 }
 
 export default Intro

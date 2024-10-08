@@ -35,17 +35,16 @@ function LanguageSelector() {
   }
 
   return (
+    
     <div className="language-selector">
+
       <div className="globe-container" onClick={toggleMenu}>
-        <span className="language-label">Language</span>
         <CiGlobe className='language-icon'/>
         <span className="selected-language">{i18n.language.slice(0, 2).toUpperCase()}</span>
       </div>
 
       {menuOpen && (
         <div className="menu">
-          {/* Cette ligne est utile pour l'affichage mobile ou responsive */}
-          <span className="selected-language-mobile">{i18n.language.slice(0, 2).toUpperCase()}</span>
 
           {filteredLanguages.map((lng) => (
             <button

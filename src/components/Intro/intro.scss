@@ -16,7 +16,7 @@
 
         .intro {
             font-size: 16px;
-            color: white;
+            color: var(--color-6);
 
             .title {
                 font-size: 40px;
@@ -36,7 +36,7 @@
                     left: 0;
                     font-size: 40px;
                     font-weight: bolder;
-                    color: white;
+                    color: var(--color-6);
                 }
 
                 .animatedTitles {
@@ -100,22 +100,44 @@
         .w-darkModeAndLanguage {
             display: flex;
             justify-content: space-between;
-
+        
             .darkModeButton {
-                width: 50px;
-                height: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: var(--color-4);
-                color: var(--color-1);
-                font-size: 16px;
-                font-weight: bolder;
+                width: 60px;
+                height: 30px;
+                background-color: var(--color-2);
+                border-radius: 15px;
                 border: none;
-                border-radius: 5px;
+                position: relative;
                 cursor: pointer;
+                transition: background-color 0.3s;
+        
+                &.active {
+                    background-color: var(--color-4);
+                }
+        
+                .darkModeIcon {
+                    width: 26px;
+                    height: 26px;
+                    background-color: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    transition: transform 0.3s ease; // Transition douce pour l'animation
+                    transform: translateX(0); // Position par défaut
+        
+                    &.active {
+                        transform: translateX(30px); // Déplacement vers la droite quand active
+                    }
+                }
             }
         }
+        
+        
+        
+    
+        
+        
 
 
         .w-portraitAndVideo {

@@ -101,16 +101,27 @@ textarea {
 }
 
 body {
-  background-color: black;
+  background-color: var(--color-1);
 }
 
-:root {
-    --color-1: #0B0C10; 
-    --color-2: #1F2833; 
-    --color-3: #C5C6C7; 
-    --color-4: #66FCF1; 
-    --color-5: #45A29E; 
-  }
+
+
+.dark {
+  --color-1: #0B0C10; 
+  --color-2: #1F2833; 
+  --color-3: #C5C6C7; 
+  --color-4: #66FCF1; 
+  --color-5: #45A29E; 
+  --color-6: #FFFF; 
+}
+
+.light {
+  --color-1: #FFFF; 
+  --color-2: #27C7D4; 
+  --color-3: #427AA1; 
+  --color-4: #FDF0E7; 
+  --color-5: #A4BD01; 
+}
 
   h2 {
     font-size: 34px;
