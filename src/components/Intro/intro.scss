@@ -2,7 +2,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    padding: 25px 0 40px 0;
+    padding: 25px 0 80px 0;
     margin-bottom: 40px;
 
     .w-intro {
@@ -95,11 +95,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
 
         .w-darkModeAndLanguage {
+            width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
+            gap: 100px;
         
             .darkModeButton {
                 width: 60px;

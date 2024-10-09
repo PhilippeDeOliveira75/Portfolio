@@ -65,7 +65,8 @@
     height: calc(100% - 100px);
     box-sizing: border-box; 
     padding: 0 20px;
-    background-color: var(--color-1);
+    background-color: var(--color-2);
+    border: 1px solid var(--color-2);
 
     .w-list {
       width: 100%;
@@ -86,8 +87,6 @@
         font-weight: bolder;
         color: white;
         cursor: pointer;
-        border: solid 1px var(--color-2);
-        border-left: none;
         border-radius: 5px;
         position: relative;
         overflow: hidden;
@@ -112,7 +111,7 @@
 
         &:hover .text span,
         &.active .text span {
-          color: var(--color-2);
+          color: var(--color-1);
           animation: letterMove 1s ease forwards; 
 
           &:nth-child(1) { animation-delay: 0.05s; }
@@ -143,6 +142,7 @@
               display: inline-block;
               transform: translateY(0); 
               transition: opacity 0.3s ease, transform 0.3s ease; 
+              
             }
           }
         }
