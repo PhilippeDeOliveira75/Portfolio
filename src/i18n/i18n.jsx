@@ -8,12 +8,14 @@ i18n
   .use(initReactI18next)
   .use(Backend)
   .init({
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
     debug: true,
     fallbackLng: "en",
     returnObjects: true,
+    nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,
     },
-  });
-
-export default i18n;
+  })
