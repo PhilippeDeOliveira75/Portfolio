@@ -106,7 +106,7 @@
             .darkModeButton {
                 width: 60px;
                 height: 30px;
-                background-color: var(--color-2);
+                background-color: var(--color-4);
                 border-radius: 15px;
                 border: none;
                 position: relative;
@@ -125,23 +125,16 @@
                     position: absolute;
                     top: 2px;
                     left: 2px;
-                    transition: transform 0.3s ease; // Transition douce pour l'animation
-                    transform: translateX(0); // Position par défaut
+                    transition: transform 0.3s ease;
+                    transform: translateX(0);
         
                     &.active {
-                        transform: translateX(30px); // Déplacement vers la droite quand active
+                        transform: translateX(30px); 
                     }
                 }
             }
         }
         
-        
-        
-    
-        
-        
-
-
         .w-portraitAndVideo {
             position: relative;
             width: 350px;

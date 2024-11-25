@@ -1,13 +1,16 @@
-import React, { useRef, useState } from 'react';
-import { FiSend } from "react-icons/fi";
-import emailjs from '@emailjs/browser';
-import { useTranslation } from 'react-i18next';  // Importing useTranslation
-import './contact.scss';
-import { ValidationForm } from '@services/import';
+import React, { useRef, useState } from 'react'
+import { FiSend } from "react-icons/fi"
+import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next'
+import './contact.scss'
+import { ValidationForm } from '@services/import'
 
 function Contact() {
-  const { t } = useTranslation('translation');  // Hook for translations
+
+  const { t } = useTranslation('translation')
+
   const form = useRef();
+
   const [errors, setErrors] = useState({ name: '', email: '', subject: '', message: '' });
   const [formData, setFormData] = useState({ name: '', user_email: '', subject: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -37,10 +40,10 @@ function Contact() {
       .then(
         () => {
           setIsSubmitted(true);
-          setSubmissionMessage(t('contact.form.success'));  // Translated success message
+          setSubmissionMessage(t('contact.form.success')); 
         },
         (error) => {
-          setSubmissionMessage(t('contact.form.error'));  // Translated error message
+          setSubmissionMessage(t('contact.form.error')); 
           console.log('FAILED...', error.text);
         }
       );
@@ -54,7 +57,7 @@ function Contact() {
 
   return (
     <div className='contactContainer'>
-      <h2>{t('contact.title')}</h2> {/* Translated title */}
+      <h2>{t('contact.title')}</h2>
       {isSubmitted ? (
         <div className='w-submissionMessages'>
           <div className='w-success'>
@@ -67,29 +70,33 @@ function Contact() {
         <form className='w-form' ref={form} onSubmit={sendEmail}>
           <div className='w-nameAndSubject'>
             <div className='w-name'>
-              <label htmlFor="name" className="visually-hidden">{t('contact.form.name')}</label>
-              <input type="text" name="name" id="name" placeholder={t('contact.form.name')} value={formData.name} onChange={handleChange} />
-              {errors.name && <span className="error">{errors.name}</span>}
+              <label htmlFor="name">{t('contact.form.name')}</label>
+              <input type="text" name="name" id="name"  value={formData.name} onChange={handleChange} />
+              {errors.name && <span className={`error ${errors.name ? 'error-active' : ''}`}>{errors.name}</span>}
             </div>
             <div className='w-subject'>
-              <label htmlFor="subject" className="visually-hidden">{t('contact.form.subject')}</label>
-              <input type="text" name="subject" id="subject" placeholder={t('contact.form.subject')} value={formData.subject} onChange={handleChange} />
-              {errors.subject && <span className="error">{errors.subject}</span>}
+              <label htmlFor="subject">{t('contact.form.subject')}</label>
+              <input type="text" name="subject" id="subject"  value={formData.subject} onChange={handleChange} />
+              {errors.subject && <span className={`error ${errors.subject ? 'error-active' : ''}`}>{errors.subject}</span>}
             </div>
           </div>
-          <label htmlFor="email" className="visually-hidden">{t('contact.form.email')}</label>
-          <input type="email" name="user_email" id="email" placeholder={t('contact.form.email')} value={formData.user_email} onChange={handleChange} />
-          {errors.email && <span className="error">{errors.email}</span>}
+          <div className='w-email'>
+            <label htmlFor="user_email">{t('contact.form.email')}</label>
+            <input type="email" name="user_email" id="user_email"  value={formData.user_email} onChange={handleChange} />
+            {errors.email && <span className={`error ${errors.email ? 'error-active' : ''}`}>{errors.email}</span>}
+          </div>
 
-          <label htmlFor="message" className="visually-hidden">{t('contact.form.message')}</label>
-          <textarea name="message" id="message" placeholder={t('contact.form.message')} value={formData.message} onChange={handleChange} />
-          {errors.message && <span className="error">{errors.message}</span>}
+          <div className='w-message'>
+            <label htmlFor="message">{t('contact.form.message')}</label>
+            <textarea name="message" id="message"  value={formData.message} onChange={handleChange} />
+            {errors.message && <span className={`error ${errors.message ? 'error-active' : ''}`}>{errors.message}</span>}
+          </div>
 
-          <button type="submit">{t('contact.form.button')}</button> {/* Translated button */}
+          <button type="submit">{t('contact.form.button')}</button>
         </form>
       )}
     </div>
-  );
+  )
 }
 
 export default Contact;

@@ -8,7 +8,7 @@ function ValidationForm (inputName, value)  {
       if (value.trim() === '') {
         errorMessage = 'Ce champ doit être rempli.';
       } else if (!nameRegex.test(value)) {
-        errorMessage = 'Ce champ ne doit contenir que des caractères alphabétiques';
+        errorMessage = 'Champ invalide.';
       } else if (value.length < 2) {
         errorMessage = 'Ce champ doit contenir au moins 2 caractères.';
       }

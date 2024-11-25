@@ -51,12 +51,13 @@ function Intro() {
             <div className='w-portrait'>
 
             <div className='w-darkModeAndLanguage'>
-    <button
-        className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
-        onClick={toggleDarkMode}
-    >
-        <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
-    </button>
+                <button
+                    className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
+                    onClick={toggleDarkMode}
+                    aria-label={isDarkMode ? "Désactiver le mode sombre" : "Activer le mode sombre"}
+                >
+                    <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
+                </button>
 
     <LanguageSelector />
 </div>

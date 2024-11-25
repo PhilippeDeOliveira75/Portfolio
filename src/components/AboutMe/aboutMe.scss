@@ -14,7 +14,7 @@
         .aboutMeCitation {
             font-size: 26px;
             font-weight: bolder;
-            color: white;
+            color: var(--color-6);
             margin-bottom: 20px;
         }
 
@@ -53,7 +53,7 @@
                 .aboutMeIcon {
                     position: absolute;
                     font-size: 80px;
-                    color: white;
+                    color: var(--color-6);
                     z-index: 1;
                 }
 
