@@ -1,15 +1,29 @@
 .skillsContainer {
     margin-bottom: 40px;
-
-    .w-logo {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 40px;
-
-        img {
-            width: 100px;
-            height: 100px;
-        };
+  
+    h2 {
+      margin-bottom: 20px;
     }
-}
+  
+    .carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: hidden; /* Masquer l'overflow pour créer l'effet du carrousel */
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      user-select: none;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+  
+      img {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  
