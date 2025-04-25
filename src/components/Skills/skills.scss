@@ -1,29 +1,63 @@
 .skillsContainer {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  background: var(--color-1);
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
   
-    h2 {
-      margin-bottom: 20px;
+  @keyframes slide {
+    from {
+      transform: translateX(0);
     }
-  
-    .carousel {
-      display: flex;
-      gap: 20px;
-      overflow-x: hidden; /* Masquer l'overflow pour créer l'effet du carrousel */
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      user-select: none;
-  
-      &::-webkit-scrollbar {
-        display: none;
-      }
-  
-      img {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-        pointer-events: none;
-      }
+    to {
+      transform: translateX(-100%);
     }
   }
   
+  .logos {
+    overflow: hidden;
+    padding: 40px 0;
+    white-space: nowrap;
+    position: relative;
+  
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+  
+    &:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(11, 12, 16, 0), var(--color-1));
+    }
+  
+    // Dégradé à droite : transparent vers foncé (vers la gauche)
+    &:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(11, 12, 16, 0), var(--color-1));
+    }
+  
+    &:hover .logos-slide {
+      animation-play-state: paused;
+    }
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  
+    img {
+      height: 70px;
+      margin: 0 40px;
+      vertical-align: middle;
+    }
+  }
+}
+
+
