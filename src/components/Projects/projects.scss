@@ -2,4 +2,20 @@
     width: 100%;
     height: 100%;
     margin-bottom: 40px;
+
+    .w-projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // 2 colonnes
+        grid-template-rows: repeat(2, auto);   // 2 lignes
+        gap: 30px; // espace entre les projets
+
+        .project {
+            width: 300px;
+
+            img {
+                width: 300px;
+                object-fit: cover;
+            }
+        }
+    }
 }

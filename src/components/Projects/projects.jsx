@@ -2,6 +2,8 @@ import './projects.scss'
 
 import { useTranslation } from "react-i18next"
 
+import { Kasa, AG } from '@assets/import'
+
 function Projects() {
 
     const { t } = useTranslation("translation")
@@ -15,27 +17,23 @@ function Projects() {
             <div className="w-projects">
 
                 <div className="project">
-                    <img src='' alt="project1" />
-                    <h3>{t('projects.text1')}</h3>
-                    <p>Project description</p>
+                    <h3>Kasa</h3>
+                    <img src={Kasa} alt="project1" />
                 </div>
 
                 <div className="project">
-                    <img src='' alt="project2" />
-                    <h3>{t('projects.text2')}</h3>
-                    <p>Project description</p>
+                    <h3>AG</h3>
+                    <img src={AG} alt="project2" />
                 </div>
 
                 <div className="project">
+                    <h3>Les petits plats</h3>
                     <img src='' alt="project3" />
-                    <h3>{t('projects.text3')}</h3>
-                    <p>Project description</p>
                 </div>
 
                 <div className="project">
+                    <h3>Bank</h3>
                     <img src='' alt="project4" />
-                    <h3>{t('projects.text4')}</h3>
-                    <p>Project description</p>
                 </div>
 
             </div>

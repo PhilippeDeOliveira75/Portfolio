@@ -4,9 +4,10 @@
 
   h2 {
     margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color, white); // optionnel selon ton thème
   }
 
-  
   @keyframes slide {
     from {
       transform: translateX(0);
@@ -15,13 +16,13 @@
       transform: translateX(-100%);
     }
   }
-  
+
   .logos {
     overflow: hidden;
     padding: 40px 0;
     white-space: nowrap;
     position: relative;
-  
+
     &:before,
     &:after {
       position: absolute;
@@ -30,34 +31,29 @@
       height: 100%;
       content: "";
       z-index: 2;
+      pointer-events: none;
     }
-  
+
     &:before {
       left: 0;
       background: linear-gradient(to left, rgba(11, 12, 16, 0), var(--color-1));
     }
-  
-    // Dégradé à droite : transparent vers foncé (vers la gauche)
+
     &:after {
       right: 0;
       background: linear-gradient(to right, rgba(11, 12, 16, 0), var(--color-1));
     }
-  
-    &:hover .logos-slide {
-      animation-play-state: paused;
-    }
   }
-  
+
   .logos-slide {
     display: inline-block;
-    animation: 35s slide infinite linear;
-  
+    animation: slide 60s linear infinite;
+
     img {
+      width: 70px;
       height: 70px;
       margin: 0 40px;
       vertical-align: middle;
     }
   }
 }
-
-

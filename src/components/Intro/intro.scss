@@ -13,7 +13,6 @@
         justify-content: space-between;
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 
-
         .intro {
             font-size: 16px;
             color: var(--color-6);
@@ -25,12 +24,12 @@
 
             .w-homeTitle {
                 width: 550px;
+                position: relative;
+                height: 40px; // hauteur d'une ligne
+                overflow: hidden;
                 display: flex;
                 align-items: center;
-                position: relative;
-                height: 40px;
-                overflow: hidden;
-
+            
                 .staticTitle {
                     position: absolute;
                     left: 0;
@@ -38,27 +37,27 @@
                     font-weight: bolder;
                     color: var(--color-6);
                 }
-
+            
                 .animatedTitles {
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-start;
                     position: absolute;
                     top: 0;
                     left: 150px;
-                    animation: slide 8s infinite linear;
-                }
-
+                    animation: vertical-slide-homeTitle
+                    8s infinite linear;
+                  }
+                  
                 .homeTitle {
                     font-size: 40px;
                     font-weight: bolder;
                     color: var(--color-4);
-                    height: 40px;
+                    height: 40px; // même hauteur que .w-homeTitle
                     display: flex;
                     align-items: center;
-                    justify-content: center;
                 }
             }
+            
 
             .introText {
                 margin-top: 40px;
@@ -102,7 +101,7 @@
             display: flex;
             justify-content: flex-end;
             gap: 100px;
-        
+
             .darkModeButton {
                 width: 60px;
                 height: 30px;
@@ -112,11 +111,11 @@
                 position: relative;
                 cursor: pointer;
                 transition: background-color 0.3s;
-        
+
                 &.active {
                     background-color: var(--color-4);
                 }
-        
+
                 .darkModeIcon {
                     width: 26px;
                     height: 26px;
@@ -127,21 +126,21 @@
                     left: 2px;
                     transition: transform 0.3s ease;
                     transform: translateX(0);
-        
+
                     &.active {
                         transform: translateX(30px); 
                     }
                 }
             }
         }
-        
+
         .w-portraitAndVideo {
             position: relative;
             width: 350px;
             height: 350px;
             border-radius: 50%;
             overflow: hidden;
-
+            border: solid 2px var(--color-5);
 
             .portrait {
                 position: absolute;
@@ -151,20 +150,19 @@
                 z-index: 10;
             }
         }
-
-
     }
+    
 }
 
 
-@keyframes slide {
-0% { transform: translateY(0); }
-20% { transform: translateY(0); }
-25% { transform: translateY(-40px); }
-45% { transform: translateY(-40px); }
-50% { transform: translateY(-80px); }
-70% { transform: translateY(-80px); }
-75% { transform: translateY(-120px); }
-95% { transform: translateY(-120px); }
-100% { transform: translateY(-160px); }
+@keyframes vertical-slide-homeTitle {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(0); }
+    25%  { transform: translateY(-40px); }
+    45%  { transform: translateY(-40px); }
+    50%  { transform: translateY(-80px); }
+    70%  { transform: translateY(-80px); }
+    75%  { transform: translateY(-120px); }
+    95%  { transform: translateY(-120px); }
+    100% { transform: translateY(0); }
 }

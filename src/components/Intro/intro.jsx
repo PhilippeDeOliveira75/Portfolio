@@ -1,23 +1,16 @@
 import './intro.scss';
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
+
 import { LanguageSelector } from '@services/import';
-import { MatrixCat, RainCode } from '@assets/import';
 
-function Intro() {
+import { MatrixCat, RainCode, CV } from '@assets/import';
+
+function Intro () {
     const { t } = useTranslation("translation");
-    const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-    const [isDarkMode, setIsDarkMode] = useState(true)
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const titles = ["WEB DEVELOPER", "UX DESIGNER", "SEO CONSULTANT", "HERO"];
-    const totalTitles = titles.length;
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % totalTitles);
-        }, 2000);
-
-        return () => clearInterval(interval);
-    }, [totalTitles]);
 
     useEffect(() => {
         document.body.className = isDarkMode ? 'dark' : 'light'; 
@@ -34,9 +27,9 @@ function Intro() {
                     <h1 className='title'>{t('home.title')}</h1>
                     <div className='w-homeTitle'>
                         <span className='staticTitle'>SUPER</span>
-                        <div className='animatedTitles' style={{ transform: `translateY(-${currentTitleIndex * 40}px)` }}>
+                        <div className="animatedTitles">
                             {titles.concat(titles[0]).map((title, index) => (
-                                <span key={index} className={`homeTitle ${index === currentTitleIndex ? 'visible' : ''}`}>{title}</span>
+                                <span key={index} className="homeTitle">{title}</span>
                             ))}
                         </div>
                     </div>
@@ -45,34 +38,31 @@ function Intro() {
                     </p>
                 </div>
                 <div className='w-buttonIntro'>
-                    <button className='buttonIntro'>{t('home.button')}</button>
+                    <a href={CV} download="CV.pdf" className="buttonIntro downloadButton">
+                        {t('home.button')}
+                    </a>
                 </div>
             </div>
             <div className='w-portrait'>
-
-            <div className='w-darkModeAndLanguage'>
-                <button
-                    className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
-                    onClick={toggleDarkMode}
-                    aria-label={isDarkMode ? "Désactiver le mode sombre" : "Activer le mode sombre"}
-                >
-                    <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
-                </button>
-
-    <LanguageSelector />
-</div>
-
-
+                <div className='w-darkModeAndLanguage'>
+                    <button
+                        className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
+                        onClick={toggleDarkMode}
+                        aria-label={isDarkMode ? "Désactiver le mode sombre" : "Activer le mode sombre"}
+                    >
+                        <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
+                    </button>
+                    <LanguageSelector />
+                </div>
                 <div className="w-portraitAndVideo">
                     <img className='portrait' src={MatrixCat} alt='portrait' />
                     <video className='video' autoPlay playsInline muted loop preload="auto">
                         <source src={RainCode} />
                     </video>
                 </div>
-
             </div>
         </div>
     );
 }
 
-export default Intro
+export default Intro;
