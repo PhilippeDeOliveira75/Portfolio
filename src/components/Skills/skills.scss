@@ -1,12 +1,4 @@
 .skillsContainer {
-  margin-bottom: 40px;
-  background: var(--color-1);
-
-  h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--text-color, white); // optionnel selon ton thème
-  }
 
   @keyframes slide {
     from {

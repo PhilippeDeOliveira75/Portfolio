@@ -2,7 +2,7 @@ import './projects.scss'
 
 import { useTranslation } from "react-i18next"
 
-import { Kasa, AG } from '@assets/import'
+import { Kasa, AG, PetitsPlats, Bank } from '@assets/import'
 
 function Projects() {
 
@@ -18,22 +18,22 @@ function Projects() {
 
                 <div className="project">
                     <h3>Kasa</h3>
-                    <img src={Kasa} alt="project1" />
+                    <img src={Kasa} alt="image site web Kasa" />
                 </div>
 
                 <div className="project">
                     <h3>AG</h3>
-                    <img src={AG} alt="project2" />
+                    <img src={AG} alt="image site web AG Consulting" />
                 </div>
 
                 <div className="project">
                     <h3>Les petits plats</h3>
-                    <img src='' alt="project3" />
+                    <img src={PetitsPlats} alt="image site web les petits plats" />
                 </div>
 
                 <div className="project">
                     <h3>Bank</h3>
-                    <img src='' alt="project4" />
+                    <img src={Bank} alt="image site web Bank" />
                 </div>
 
             </div>
