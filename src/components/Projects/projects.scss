@@ -4,10 +4,9 @@
     margin-bottom: 40px;
 
     .w-projects {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); // 2 colonnes
-        grid-template-rows: repeat(2, auto);   // 2 lignes
-        gap: 30px; // espace entre les projets
+        display: flex;
+        justify-content: space-between;
+        gap: 30px; 
 
         .project {
             width: 300px;
@@ -16,6 +15,16 @@
                 width: 300px;
                 height: 180px;
                 object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .projectsContainer{
+        .w-projects {
+            .project {
+                width: 250px;
             }
         }
     }

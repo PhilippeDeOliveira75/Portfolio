@@ -14,7 +14,6 @@
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 
         .intro {
-            font-size: 16px;
             color: var(--color-6);
 
             .title {
@@ -25,41 +24,54 @@
             .w-homeTitle {
                 width: 550px;
                 position: relative;
-                height: 40px; // hauteur d'une ligne
+                height: 40px;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
-            
+              
                 .staticTitle {
-                    position: absolute;
-                    left: 0;
-                    font-size: 40px;
-                    font-weight: bolder;
-                    color: var(--color-6);
+                  position: absolute;
+                  left: 0;
+                  font-size: 40px;
+                  font-weight: bolder;
+                  color: var(--color-6);
                 }
-            
+              
                 .animatedTitles {
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 0;
-                    left: 150px;
-                    animation: vertical-slide-homeTitle
-                    8s infinite linear;
-                  }
-                  
-                .homeTitle {
+                  display: flex;
+                  flex-direction: column;
+                  position: absolute;
+                  top: 0;
+                  left: 150px;
+                  animation: vertical-slide-homeTitle 8s infinite steps(8); // Nombre total de titres
+              
+                  .homeTitle {
                     font-size: 40px;
                     font-weight: bolder;
                     color: var(--color-4);
-                    height: 40px; // même hauteur que .w-homeTitle
+                    height: 40px;
                     display: flex;
                     align-items: center;
+                  }
                 }
-            }
+              }
+              
+              // Animation modifiée pour un défilement continu
+              @keyframes vertical-slide-homeTitle {
+                0%   { transform: translateY(0); }
+                20%  { transform: translateY(0); }
+                25%  { transform: translateY(-40px); }
+                45%  { transform: translateY(-40px); }
+                50%  { transform: translateY(-80px); }
+                70%  { transform: translateY(-80px); }
+                75%  { transform: translateY(-120px); }
+                95%  { transform: translateY(-120px); }
+                100% { transform: translateY(-160px); } // Continuer le défilement sans revenir à 0
+              }
             
 
             .introText {
+                font-size: 20px;
                 margin-top: 40px;
                 color: var(--color-3);
             }
@@ -93,46 +105,8 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: flex-end;
-
-        .w-darkModeAndLanguage {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            gap: 100px;
-
-            .darkModeButton {
-                width: 60px;
-                height: 30px;
-                background-color: var(--color-4);
-                border-radius: 15px;
-                border: none;
-                position: relative;
-                cursor: pointer;
-                transition: background-color 0.3s;
-
-                &.active {
-                    background-color: var(--color-4);
-                }
-
-                .darkModeIcon {
-                    width: 26px;
-                    height: 26px;
-                    background-color: white;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 2px;
-                    left: 2px;
-                    transition: transform 0.3s ease;
-                    transform: translateX(0);
-
-                    &.active {
-                        transform: translateX(30px); 
-                    }
-                }
-            }
-        }
 
         .w-portraitAndVideo {
             position: relative;
@@ -154,15 +128,72 @@
     
 }
 
+@media (max-width: 1200px) {
 
-@keyframes vertical-slide-homeTitle {
-    0%   { transform: translateY(0); }
-    20%  { transform: translateY(0); }
-    25%  { transform: translateY(-40px); }
-    45%  { transform: translateY(-40px); }
-    50%  { transform: translateY(-80px); }
-    70%  { transform: translateY(-80px); }
-    75%  { transform: translateY(-120px); }
-    95%  { transform: translateY(-120px); }
-    100% { transform: translateY(0); }
-}
+    .w-introAndPortrait {
+        .w-intro {
+            .intro {
+                .introText {
+                    font-size: 16px;
+                }
+
+                .title {
+                    font-size: 30px;
+                }
+
+                .w-homeTitle {
+                    .staticTitle{
+                        font-size: 30px;
+                    }
+                    .animatedTitles{
+                        left: 115px;
+
+                        .homeTitle{
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+      .w-portrait {
+
+        .w-portraitAndVideo {
+            width: 220px;
+            height: 220px;
+        }
+      }
+    }
+  }
+  
+
+  
+  @media (max-width: 480px) {
+    .w-homeTitle {
+      .staticTitle,
+      .homeTitle {
+        font-size: 24px;
+      }
+      .animatedTitles {
+        left: 100px;
+      }
+    }
+  
+    .w-intro {
+      .title {
+        font-size: 30px;
+      }
+  
+      .introText {
+        font-size: 14px;
+      }
+    }
+  
+    .w-portrait {
+      .w-portraitAndVideo {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+  
