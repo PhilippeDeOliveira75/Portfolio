@@ -1,5 +1,5 @@
 import './home.scss';
-import { Intro, AboutMe, Skills, Projects, Contact } from '@components/import';
+import { Intro, AboutMe, Skills, Contact } from '@components/import';
 
 function Home() {
 
@@ -14,9 +14,6 @@ function Home() {
             </section>
             <section id="skills">
                 <Skills />
-            </section>
-            <section id="projects">
-                <Projects />
             </section>
             <section id="contact">
                 <Contact />

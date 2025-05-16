@@ -27,11 +27,7 @@
     },
 
     "projects": {
-        "title": "PROJECTS",
-        "text1": "Project 1",
-        "text2": "Project 2",
-        "text3": "Project 3",
-        "text4": "Project 4"
+        "title": "Projects"
     },
 
     "contact": {

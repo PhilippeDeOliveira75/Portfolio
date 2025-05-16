@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 
 import { RiHome5Line } from "react-icons/ri"
 import { PiSmileyWink } from "react-icons/pi"
-import { GrProjects } from "react-icons/gr"
 import { GrContact } from "react-icons/gr"
 import { LiaStar } from "react-icons/lia"
 
@@ -24,16 +23,20 @@ function Header({ activeIndex, setActiveIndex }) {
   }
 
   const handleClick = (index) => {
-    setActiveIndex(index)
+    setActiveIndex(index);
     
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact']
-    const sectionId = sectionIds[index]
-
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    const sectionIds = ['home', 'about', 'skills', 'contact'];
+    const sectionId = sectionIds[index];
+  
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
-  }
+  };
 
   useEffect (() => {
       document.body.className = isDarkMode ? 'dark' : 'light'; 
@@ -68,7 +71,7 @@ function Header({ activeIndex, setActiveIndex }) {
 
           <ul className='w-list'>
 
-              {[t('NavBar.home'), t('NavBar.aboutme'), t('NavBar.skills'), t('NavBar.projects'), t('NavBar.contact')].map((item, index) => (
+              {[t('NavBar.home'), t('NavBar.aboutme'), t('NavBar.skills'), t('NavBar.contact')].map((item, index) => (
               
               <li key={item} className={`list ${activeIndex === index ? 'active' : ''}`} onClick={() => handleClick(index)} >
               
@@ -76,8 +79,7 @@ function Header({ activeIndex, setActiveIndex }) {
                   {index === 0 && <RiHome5Line className='icon' size={24} />}
                   {index === 1 && <PiSmileyWink className='icon' size={24} />}
                   {index === 2 && <LiaStar className='icon' size={24} />}
-                  {index === 3 && <GrProjects className='icon' size={20} />}
-                  {index === 4 && <GrContact className='icon' size={20} />}
+                  {index === 3 && <GrContact className='icon' size={20} />}
                 </div>
 
                 <div className='textContainer'>

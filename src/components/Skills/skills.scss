@@ -1,4 +1,6 @@
 .skillsContainer {
+  display: flex;
+  flex-direction: column;
 
   @keyframes slide {
     from {
@@ -8,6 +10,13 @@
       transform: translateX(-100%);
     }
   }
+
+  .technoContainer {
+    margin-bottom: 70px;
+
+    h3 {
+      text-align: center;
+    }
 
   .logos {
     overflow: hidden;
@@ -21,7 +30,7 @@
       top: 0;
       width: 150px;
       height: 100%;
-      content: "";
+      content: '';
       z-index: 2;
       pointer-events: none;
     }
@@ -48,4 +57,43 @@
       vertical-align: middle;
     }
   }
+
+}
+
+.projectsContainer {
+  width: 100%;
+  height: 100%;
+
+  h3 {
+    text-align: center;
+  }
+
+
+  .w-projects {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px; 
+
+      .project {
+          width: 350px;
+          border: solid 2px var(--color-4);
+
+          img {
+              width: 350px;
+              height: 180px;
+              object-fit: fill;
+          }
+      }
+  }
+}
+
+@media (max-width: 1200px) {
+  .projectsContainer{
+      .w-projects {
+          .project {
+              width: 250px;
+          }
+      }
+  }
+}
 }

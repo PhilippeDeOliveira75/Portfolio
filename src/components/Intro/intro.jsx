@@ -24,13 +24,13 @@ function Intro () {
                         {t('home.intro')}
                     </p>
                 </div>
-                <div className='w-buttonIntro'>
+            </div>
+            <div className='w-portrait'>
+            <div className='w-buttonIntro'>
                     <a href={CV} download="CV.pdf" className="buttonIntro downloadButton">
                         {t('home.button')}
                     </a>
                 </div>
-            </div>
-            <div className='w-portrait'>
                 <div className="w-portraitAndVideo">
                     <img className='portrait' src={MatrixCat} alt='portrait' />
                     <video className='video' autoPlay playsInline muted loop preload="auto">

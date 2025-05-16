@@ -1,12 +1,11 @@
 .w-introAndPortrait {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    padding: 25px 0 80px 0;
-    margin-bottom: 40px;
+    flex-direction: column;
 
     .w-intro {
-        width: 60%;
+        width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -22,7 +21,6 @@
             }
 
             .w-homeTitle {
-                width: 550px;
                 position: relative;
                 height: 40px;
                 overflow: hidden;
@@ -79,7 +77,6 @@
     }
 
     .w-buttonIntro {
-        width: 100%;
         height: 50px;
         display: flex;
         justify-content: flex-start;
@@ -101,17 +98,15 @@
     }
 
     .w-portrait {
-        width: 40%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
 
         .w-portraitAndVideo {
             position: relative;
-            width: 350px;
-            height: 350px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             overflow: hidden;
             border: solid 2px var(--color-5);
@@ -157,6 +152,13 @@
         }
 
       .w-portrait {
+
+        .w-buttonIntro {
+  
+          .buttonIntro {
+              width: 150px;
+          }
+      }
 
         .w-portraitAndVideo {
             width: 220px;
