@@ -1,7 +1,7 @@
 import './layout.scss'
 import { Outlet } from 'react-router'
 import { Header, Footer } from '@components/import.js'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function PublicLayout() {
@@ -10,7 +10,7 @@ function PublicLayout() {
 
   useEffect(() => {
 
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
+    const sectionIds = ['home', 'about', 'skills', 'contact'];
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
