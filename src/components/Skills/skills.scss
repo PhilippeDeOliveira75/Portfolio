@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
 
+
   .slider {
   --width: 70px;
   --height: 70px;
   --quantity: 9;
+  margin-bottom: 40px;
 
   width: 100%;
   height: var(--height);
@@ -33,15 +35,6 @@
       height: 100%;
       object-fit: contain;
     }
-  }
-
-  &:hover .item {
-    animation-play-state: paused !important;
-    filter: grayscale(1);
-  }
-
-  .item:hover {
-    filter: grayscale(0);
   }
 
   &[reverse="true"] .item {
@@ -88,6 +81,7 @@
     border: solid 2px var(--color-4);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 
       &:hover {
         transform: scale(1.05);

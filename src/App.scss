@@ -23,8 +23,7 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal; /* Reset font-weight */
-  line-height: 1.2; /* Adjust line-height for better spacing */
+  all: unset;
 }
 
 /* Links */
@@ -128,7 +127,7 @@ body {
   h2 {
     font-size: 34px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: var(--color-4);
   }
 

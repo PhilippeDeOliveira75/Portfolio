@@ -1,0 +1,103 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 100px;
+    cursor: pointer;
+    color: var(--color-5);
+    transition: color 0.3s, font-size 0.3s;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: var(--color-4);
+      font-size: 110px;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+
+  .cards-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+
+    .card-link {
+      width: 80%;
+      
+    }
+  
+
+  .card {
+    height: 500px;
+    border: 2px solid var(--color-4);
+    background: var(--color-1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    .project-image {
+      border-radius: 10px;
+      padding: 5px;
+      width: 100%;
+      height: 350px;
+      object-fit: fill;
+    }
+
+    .tech-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+      padding: 0 10px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+    }
+
+    .description {
+      color: var(--color-4);
+      font-size: 16px;
+      margin-bottom: 12px;
+
+      &:first-of-type {
+        color: var(--color-6);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      &:nth-of-type(2) {
+        font-weight: 600;
+        color: var(--color-6);
+        margin-top: 16px;
+      }
+    }
+  }
+}
+}

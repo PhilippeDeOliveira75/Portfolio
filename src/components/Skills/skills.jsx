@@ -2,8 +2,8 @@ import './skills.scss'
 
 import { useTranslation } from "react-i18next"
 
+import { CarouselProject } from '@components/import'
 import { React as ReactLogo, Vite, Github, Node, Docker, Redux, Sass, Next, Tailwind} from '@assets/import'
-import { Kasa, AG, PetitsPlats, Bank } from '@assets/import'
 
 function Skills() {
 
@@ -40,26 +40,12 @@ function Skills() {
 </div>
 
 
-      <div className="projectsContainer">
-        <h3>{t('projects.title')}</h3>
-        <div className="w-projects">
-          <div className="project">
-            <img src={Kasa} alt="image site web Kasa" />
-          </div>
 
-          <div className="project">
-            <img src={AG} alt="image site web AG Consulting" />
-          </div>
+        <div className="projectsContainer">
 
-          <div className="project">
-            <img src={PetitsPlats} alt="image site web les petits plats" />
-          </div>
+  <CarouselProject />
+</div>
 
-          <div className="project">
-            <img src={Bank} alt="image site web Bank" />
-          </div>
-        </div>
-      </div>
     </div>
 
   )
