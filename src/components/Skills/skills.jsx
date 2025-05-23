@@ -16,16 +16,29 @@ function Skills() {
 
       <h2>{t('skills.title')}</h2>
 
-      <div className='technoContainer'>
-        <h3>Technos</h3>
-        <div className="logos">
-          <div className="logos-slide">
-            {[...logos, ...logos, ...logos].map((logo, i) => (
-              <img key={i} src={logo} alt={`logo-${i}`} />
-            ))}
-          </div>
+<div className='technoContainer'>
+  <div
+    className="slider"
+    style={{
+      '--width': '70px',
+      '--height': '70px',
+      '--quantity': logos.length,
+    }}
+  >
+    <div className="list">
+      {[...logos, ...logos].map((logo, index) => (
+        <div
+          className="item"
+          key={index}
+          style={{ '--position': index + 1 }}
+        >
+          <img src={logo} alt={`logo-${index}`} />
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       <div className="projectsContainer">
         <h3>{t('projects.title')}</h3>
