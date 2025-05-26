@@ -6,6 +6,11 @@
     justify-content: flex-end;
     align-items: center;
     gap: 100px;
+    transition: padding-right 0.3s ease;
+
+    &.menu-open {
+      padding-right: 200px;
+    }
 
     .darkModeButton {
       width: 60px;

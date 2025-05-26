@@ -1,27 +1,22 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import './burgerMenu.scss';
+
 import { RiHome5Line } from 'react-icons/ri';
 import { PiSmileyWink } from 'react-icons/pi';
 import { LiaStar } from 'react-icons/lia';
 import { GrContact } from 'react-icons/gr';
-import './burgerMenu.scss';
 
-const BurgerMenu = () => {
-  const { t } = useTranslation('translation');
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
+function MenuBurger ({ t, activeIndex, handleClick, isMenuOpen, setIsMenuOpen }) {
+  
+  function toggleMenu() {
+    console.log('ToggleMenu clicked');
+    setIsMenuOpen(prev => !prev);
+  }
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const handleClick = (index) => {
-    setActiveIndex(index);
-    setIsOpen(false); // ferme le menu après clic
-  };
-
-  const splitText = (text) => {
+  function splitText(text) {
     return text.split('').map((letter, i) => (
       <span key={i} className="letter">{letter}</span>
     ));
-  };
+  }
 
   const items = [
     t('NavBar.home'),
@@ -31,21 +26,22 @@ const BurgerMenu = () => {
   ];
 
   return (
-
     <div className="burger-menu-container">
-      
-      <div className={`burger-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu} >
+      <div className={`burger-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
       </div>
 
-      <nav className={`menu ${isOpen ? 'open' : ''}`}>
+      <nav className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <ul className="w-list">
           {items.map((item, index) => (
             <li
               key={item}
               className={`list ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => handleClick(index)}
+              onClick={() => {
+                handleClick(index);
+                setIsMenuOpen(false);
+              }}
             >
               <div className="iconContainer">
                 {index === 0 && <RiHome5Line className="icon" size={24} />}
@@ -62,6 +58,6 @@ const BurgerMenu = () => {
       </nav>
     </div>
   );
-};
+}
 
-export default BurgerMenu;
+export default MenuBurger;

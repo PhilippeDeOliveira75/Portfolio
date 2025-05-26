@@ -7,9 +7,14 @@ import { useEffect, useState } from 'react'
 import { Menu, BurgerMenu } from '@components/import'
 
 function Header({ activeIndex, setActiveIndex }) {
-
+  console.log('HEADER RENDERED')
   const { t } = useTranslation('translation')
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    console.log('isMenuOpen:', isMenuOpen)
+  }, [isMenuOpen])
 
   const handleClick = (index) => {
     setActiveIndex(index)
@@ -25,6 +30,9 @@ function Header({ activeIndex, setActiveIndex }) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }
+
+    // ferme le menu
+    setIsMenuOpen(false)
   }
 
   useEffect(() => {
@@ -36,10 +44,13 @@ function Header({ activeIndex, setActiveIndex }) {
   }
 
   return (
-
     <header className='headerContainer'>
+      <div
+        className={`w-darkModeAndLanguage ${isMenuOpen ? 'menu-open' : ''}`}
+        data-debug-class={isMenuOpen ? 'menu-open' : 'no-class'}
+      >
+        {console.log('render w-darkModeAndLanguage with class:', isMenuOpen ? 'menu-open' : 'no-class')}
 
-      <div className='w-darkModeAndLanguage'>
         <button
           className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
           onClick={toggleDarkMode}
@@ -47,13 +58,19 @@ function Header({ activeIndex, setActiveIndex }) {
         >
           <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
         </button>
+
         <LanguageSelector />
+
         <div className='menu-mobile'>
-          <BurgerMenu t={t} activeIndex={activeIndex} handleClick={handleClick} />
+          <BurgerMenu
+            t={t}
+            activeIndex={activeIndex}
+            handleClick={handleClick}
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+          />
         </div>
       </div>
-
-
 
       <div className='w-navContainer'>
         <div className='w-title'>
@@ -64,9 +81,7 @@ function Header({ activeIndex, setActiveIndex }) {
           <Menu t={t} activeIndex={activeIndex} handleClick={handleClick} />
         </div>
       </div>
-
     </header>
-
   )
 }
 
