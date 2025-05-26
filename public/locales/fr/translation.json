@@ -42,7 +42,8 @@
     },
 
     "footer": {
-      "text": "© 2024 Tous droits réservés. Conçu et développé par Neoz."
+      "text1": "© 2024 Tous droits réservés",
+      "text2": "Conçu et développé par Neoz"
     }
 
 }

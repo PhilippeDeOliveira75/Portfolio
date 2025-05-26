@@ -10,7 +10,8 @@ function Footer() {
 
         <footer className="footer">
 
-            <p>{t('footer.text')}</p>
+            <p>{t('footer.text1')}</p>
+            <p>{t('footer.text2')}</p>
 
         </footer>
 

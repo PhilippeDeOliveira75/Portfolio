@@ -42,6 +42,7 @@
     },
 
     "footer": {
-        "text": "© 2024 All rights reserved. Designed & Built by Neoz"
+        "text1": "© 2024 All rights reserved",
+        "text2": "Designed and Built by Neoz"
     }
 }
