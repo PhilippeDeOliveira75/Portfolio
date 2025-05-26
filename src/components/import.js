@@ -5,3 +5,6 @@ export { default as AboutMe } from '@components/AboutMe/aboutMe.jsx'
 export { default as Skills } from '@components/Skills/skills.jsx'
 export { default as Contact } from '@components/Contact/contact.jsx'
 export { default as CarouselProject } from '@components/CarouselProject/carouselProject.jsx'
+
+export { default as BurgerMenu } from '@components/BurgerMenu/burgerMenu.jsx'
+export { default as Menu } from '@components/Menu/menu.jsx'
