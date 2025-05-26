@@ -103,7 +103,16 @@
 
 @media (max-width: 768px) {
   .headerContainer {
+    height: 60px !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-2);
+
     .w-darkModeAndLanguage {
+      height: 60px !important;
       gap: 40px;
 
       .darkModeButton {

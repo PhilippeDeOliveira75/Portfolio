@@ -6,19 +6,23 @@
     padding: 0 40px;
 
     #home {
-        margin-bottom: 80px;
+        padding-top: 60px;
+        margin-bottom: 50px;
     }
 
     #about {
-        margin-bottom: 80px;
+        padding-top: 60px;
+        margin-bottom: 50px;
     }
 
     #skills {
-        margin-bottom: 80px;
+        padding-top: 60px;
+        margin-bottom: 50px;
     }
 
     #contact {
-        margin-bottom: 80px;
+        padding-top: 60px;
+        margin-bottom: 50px;
     }
 
 }
@@ -27,5 +31,21 @@
     .homeContainer {
         width: 100%;
         padding: 0 20px;
+
+        #home {
+            margin-top: 60px !important;
+        }
+
+        #about {
+            margin-top: 60px !important;  
+        }
+
+        #skills {
+            margin-top: 60px !important;
+        }
+
+        #contact {
+            margin-top: 60px !important;
+        }
     }
 }

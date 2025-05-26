@@ -1,21 +1,24 @@
 import './menu.scss'
 
-import { RiHome5Line } from "react-icons/ri";
-import { PiSmileyWink } from "react-icons/pi";
-import { GrContact } from "react-icons/gr";
-import { LiaStar } from "react-icons/lia";
+import { RiHome5Line } from "react-icons/ri"
+import { PiSmileyWink } from "react-icons/pi"
+import { GrContact } from "react-icons/gr"
+import { LiaStar } from "react-icons/lia"
 
 function Menu({ t, activeIndex, handleClick }) {
+
   const splitText = (text) => {
     return text.split('').map((letter, index) => (
       <span key={index} style={{ '--index': index }}>
         {letter === ' ' ? '\u00A0' : letter}
       </span>
-    ));
-  };
+    ))
+  }
 
   return (
+
     <nav className='navContainer'>
+
       <ul className='w-list'>
         {[t('NavBar.home'), t('NavBar.aboutme'), t('NavBar.skills'), t('NavBar.contact')].map((item, index) => (
           <li
@@ -35,8 +38,10 @@ function Menu({ t, activeIndex, handleClick }) {
           </li>
         ))}
       </ul>
+
     </nav>
-  );
+
+  )
 }
 
-export default Menu;
+export default Menu

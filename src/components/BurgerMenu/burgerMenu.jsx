@@ -1,21 +1,21 @@
 import './burgerMenu.scss';
 
-import { RiHome5Line } from 'react-icons/ri';
-import { PiSmileyWink } from 'react-icons/pi';
-import { LiaStar } from 'react-icons/lia';
-import { GrContact } from 'react-icons/gr';
+import { RiHome5Line } from 'react-icons/ri'
+import { PiSmileyWink } from 'react-icons/pi'
+import { LiaStar } from 'react-icons/lia'
+import { GrContact } from 'react-icons/gr'
 
 function MenuBurger ({ t, activeIndex, handleClick, isMenuOpen, setIsMenuOpen }) {
   
   function toggleMenu() {
-    console.log('ToggleMenu clicked');
-    setIsMenuOpen(prev => !prev);
+    console.log('ToggleMenu clicked')
+    setIsMenuOpen(prev => !prev)
   }
 
   function splitText(text) {
     return text.split('').map((letter, i) => (
       <span key={i} className="letter">{letter}</span>
-    ));
+    ))
   }
 
   const items = [
@@ -23,7 +23,7 @@ function MenuBurger ({ t, activeIndex, handleClick, isMenuOpen, setIsMenuOpen })
     t('NavBar.aboutme'),
     t('NavBar.skills'),
     t('NavBar.contact'),
-  ];
+  ]
 
   return (
     <div className="burger-menu-container">
@@ -60,4 +60,4 @@ function MenuBurger ({ t, activeIndex, handleClick, isMenuOpen, setIsMenuOpen })
   );
 }
 
-export default MenuBurger;
+export default MenuBurger
