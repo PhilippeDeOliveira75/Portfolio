@@ -125,6 +125,7 @@
   .carousel {
     flex-direction: column;
   }
+
   .nav {
     display: none !important;
   }
@@ -134,8 +135,16 @@
   }
 
   .cards-wrapper {
+    display: block !important;
+
     .card-link {
       width: 100%;
+
+      .card {
+        width: 100%;
+      }
     }
   }
 }
+
+

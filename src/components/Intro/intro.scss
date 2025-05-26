@@ -170,6 +170,26 @@
   
 @media (max-width: 768px) {
   .w-introAndPortrait {
+    .w-intro {
+      .intro {
+        .title {
+          font-size: 24px;
+        }
+        .w-homeTitle {
+          .staticTitle {
+            font-size: 24px;
+          }
+          .animatedTitles {
+            left: 90px;
+
+            .homeTitle{
+              font-size: 24px;
+            }
+
+          }
+        }
+      }
+    }
     .w-portrait {
     gap: 40px;
     align-items: center;
@@ -184,7 +204,7 @@
     .w-homeTitle {
       .staticTitle,
       .homeTitle {
-        font-size: 24px;
+        font-size: 20px;
       }
       .animatedTitles {
         left: 100px;
