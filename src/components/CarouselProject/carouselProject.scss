@@ -101,3 +101,41 @@
   }
 }
 }
+
+.pagination-dots {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-5);
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: var(--color-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+  }
+  .nav {
+    display: none !important;
+  }
+
+  .pagination-dots {
+    display: flex;
+  }
+
+  .cards-wrapper {
+    .card-link {
+      width: 100%;
+    }
+  }
+}

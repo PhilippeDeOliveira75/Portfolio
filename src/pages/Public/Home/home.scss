@@ -31,21 +31,17 @@
     .homeContainer {
         width: 100%;
         padding: 0 20px;
-
-        #home {
-            margin-top: 60px !important;
-        }
-
-        #about {
-            margin-top: 60px !important;  
-        }
-
-        #skills {
-            margin-top: 60px !important;
-        }
-
-        #contact {
-            margin-top: 60px !important;
-        }
     }
 }
+
+@media (max-width: 768px) {
+  .homeContainer {
+    #home,
+    #about,
+    #skills,
+    #contact {
+      margin-bottom: 0;
+    }
+  }
+}
+
