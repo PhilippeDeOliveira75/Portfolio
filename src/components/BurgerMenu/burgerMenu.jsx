@@ -8,7 +8,6 @@ import { GrContact } from 'react-icons/gr'
 function MenuBurger ({ t, activeIndex, handleClick, isMenuOpen, setIsMenuOpen }) {
   
   function toggleMenu() {
-    console.log('ToggleMenu clicked')
     setIsMenuOpen(prev => !prev)
   }
 

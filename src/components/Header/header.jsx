@@ -7,13 +7,12 @@ import { useEffect, useState } from 'react'
 import { Menu, BurgerMenu } from '@components/import'
 
 function Header({ activeIndex, setActiveIndex }) {
-  console.log('HEADER RENDERED')
+
   const { t } = useTranslation('translation')
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    console.log('isMenuOpen:', isMenuOpen)
   }, [isMenuOpen])
 
   const handleClick = (index) => {
@@ -49,7 +48,6 @@ function Header({ activeIndex, setActiveIndex }) {
         className={`w-darkModeAndLanguage ${isMenuOpen ? 'menu-open' : ''}`}
         data-debug-class={isMenuOpen ? 'menu-open' : 'no-class'}
       >
-        {console.log('render w-darkModeAndLanguage with class:', isMenuOpen ? 'menu-open' : 'no-class')}
 
         <button
           className={`darkModeButton ${isDarkMode ? 'active' : ''}`}
