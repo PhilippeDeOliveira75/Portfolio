@@ -71,7 +71,7 @@ function Contact() {
           <div className='w-nameAndSubject'>
             <div className='w-name'>
               <label htmlFor="name">{t('contact.form.name')}</label>
-              <input type="text" name="name" id="name"  value={formData.name} onChange={handleChange} />
+              <input type="text" name="name" id="name"  value={formData.name} onChange={handleChange} autocomplete="given-name" />
               {errors.name && <span className={`error ${errors.name ? 'error-active' : ''}`}>{errors.name}</span>}
             </div>
             <div className='w-subject'>
