@@ -3,6 +3,10 @@
   z-index: 1000;
 
   .burger-icon {
+      position: fixed;
+  top: 40px;
+  right: 20px;
+  z-index: 2000; 
     width: 25px;
     height: 15px;
     display: flex;
@@ -33,15 +37,18 @@
 
 
 .menu {
-  position: absolute;
+  position: fixed; /* fixe par rapport à la fenêtre */
   top: 0;
-  right: -200px;
+  right: 0; /* Collé à droite */
   width: 200px;
   height: 100vh;
   background-color: var(--color-2);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease;
   padding-top: 4rem;
+
+  /* cacher le menu hors écran avec transform */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
 
   ul {
     list-style: none;
@@ -66,7 +73,8 @@
   }
 
   &.open {
-    right: 0;
+    transform: translateX(0); /* quand ouvert, on ramène le menu visible */
   }
 }
+
 }

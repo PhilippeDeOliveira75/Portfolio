@@ -1,5 +1,4 @@
 .headerContainer {
-
   .w-darkModeAndLanguage {
     padding-right: 40px;
     height: 100px;
@@ -72,6 +71,7 @@
   }
 }
 
+/* --- MEDIA QUERIES --- */
 @media (max-width: 1200px) {
   .headerContainer {
     .w-darkModeAndLanguage {
@@ -97,9 +97,7 @@
 }
 
 @media (max-width: 768px) {
-
   .headerContainer {
-
     .w-darkModeAndLanguage {
       gap: 40px;
 
@@ -121,22 +119,25 @@
 
       .menu-mobile {
         display: block;
+
+        .menu {
+          display: block;
+        }
       }
     }
-
-
 
     .w-navContainer {
       display: none;
       min-width: 210px;
 
       .menu-desktop {
-        display: block;
+        display: none;
       }
     }
   }
 }
 
+/* --- ANIMATIONS --- */
 @keyframes letterMove {
   0% {
     opacity: 1;
