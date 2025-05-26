@@ -168,6 +168,16 @@
     }
   }
   
+@media (max-width: 768px) {
+  .w-introAndPortrait {
+    .w-portrait {
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    }
+  }
+}
 
   
   @media (max-width: 480px) {

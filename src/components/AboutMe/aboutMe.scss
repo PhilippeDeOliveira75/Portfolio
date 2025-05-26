@@ -71,3 +71,16 @@
     }
 
 }
+
+@media (max-width: 768px) {
+    .aboutMeContainer {
+        .w-aboutMeContent {
+            flex-direction: column;
+
+            .w-aboutMeIconAndText {
+                width: 100%;
+            }
+
+    }
+}
+}
