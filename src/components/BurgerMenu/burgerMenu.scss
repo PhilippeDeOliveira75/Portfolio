@@ -1,37 +1,36 @@
 .burger-menu-container {
   position: relative;
   z-index: 1000;
-}
 
-.burger-icon {
-  width: 30px;
-  height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  margin: 1rem;
-  z-index: 1100;
+  .burger-icon {
+    width: 25px;
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 
-  span {
-    height: 4px;
-    background: #333;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--color-4);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 3px);
+      }
+
+      span:nth-child(2) {
+        transform: rotate(-45deg) translate(5px, -4px);
+      }
+    }
   }
 
-  &.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
 
-  &.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  &.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-}
 
 .menu {
   position: absolute;
@@ -39,7 +38,7 @@
   right: -200px;
   width: 200px;
   height: 100vh;
-  background-color: #fafafa;
+  background-color: var(--color-2);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   padding-top: 4rem;
@@ -47,6 +46,7 @@
   ul {
     list-style: none;
     padding: 0;
+    color: var(--color-4);
 
     li {
       padding: 1rem;
@@ -54,7 +54,7 @@
 
       a {
         text-decoration: none;
-        color: #333;
+        color: var(--color-4);
         font-weight: bold;
         transition: color 0.2s;
 
@@ -68,4 +68,5 @@
   &.open {
     right: 0;
   }
+}
 }

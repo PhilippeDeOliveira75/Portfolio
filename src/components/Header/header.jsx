@@ -36,6 +36,7 @@ function Header({ activeIndex, setActiveIndex }) {
   }
 
   return (
+
     <header className='headerContainer'>
 
       <div className='w-darkModeAndLanguage'>
@@ -47,10 +48,12 @@ function Header({ activeIndex, setActiveIndex }) {
           <span className={`darkModeIcon ${isDarkMode ? 'active' : ''}`}></span>
         </button>
         <LanguageSelector />
-      </div>
-                    <div className='menu-mobile'>
+        <div className='menu-mobile'>
           <BurgerMenu t={t} activeIndex={activeIndex} handleClick={handleClick} />
         </div>
+      </div>
+
+
 
       <div className='w-navContainer'>
         <div className='w-title'>
@@ -60,10 +63,10 @@ function Header({ activeIndex, setActiveIndex }) {
         <div className='menu-desktop'>
           <Menu t={t} activeIndex={activeIndex} handleClick={handleClick} />
         </div>
-
-
       </div>
+
     </header>
+
   )
 }
 

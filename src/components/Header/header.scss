@@ -1,4 +1,5 @@
 .headerContainer {
+
   .w-darkModeAndLanguage {
     padding-right: 40px;
     height: 100px;
@@ -39,6 +40,10 @@
     }
   }
 
+  .menu-mobile {
+    display: none;
+  }
+
   .w-navContainer {
     display: block;
     position: fixed;
@@ -60,14 +65,10 @@
         color: var(--color-4);
       }
     }
-  }
 
-  .menu-desktop {
-    display: none;
-  }
-
-  .menu-mobile {
-    display: block;
+    .menu-desktop {
+      display: block;
+    }
   }
 }
 
@@ -96,7 +97,9 @@
 }
 
 @media (max-width: 768px) {
+
   .headerContainer {
+
     .w-darkModeAndLanguage {
       gap: 40px;
 
@@ -115,19 +118,21 @@
           }
         }
       }
+
+      .menu-mobile {
+        display: block;
+      }
     }
+
+
 
     .w-navContainer {
       display: none;
       min-width: 210px;
-    }
 
-    .menu-desktop {
-      display: block;
-    }
-
-    .menu-mobile {
-      display: none;
+      .menu-desktop {
+        display: block;
+      }
     }
   }
 }
