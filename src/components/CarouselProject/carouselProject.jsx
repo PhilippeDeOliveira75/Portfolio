@@ -28,7 +28,7 @@ function CarouselProject() {
     onSwipedLeft: next,
     onSwipedRight: prev,
     preventScrollOnSwipe: true,
-    trackMouse: true, // supporte aussi le swipe avec la souris
+    trackMouse: true, 
   })
 
   const currentProject = projects[startIndex]

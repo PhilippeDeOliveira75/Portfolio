@@ -1,8 +1,7 @@
 export { default as MatrixCat } from '@assets/images/matrixCat.avif';
-export { default as Kasa } from '@assets/images/kasa.png';
-export { default as AG } from '@assets/images/ag.png';
-export { default as PetitsPlats } from '@assets/images/petitsPlats.png';
-export { default as Bank } from '@assets/images/bank.png';
+export { default as Kasa } from '@assets/images/kasa.webp';
+export { default as PetitsPlats } from '@assets/images/petitsPlats.webp';
+export { default as Bank } from '@assets/images/bank.webp';
 
 export { default as RainCode } from '@assets/videos/rainCode.mp4';
 
